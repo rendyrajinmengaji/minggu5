@@ -27,7 +27,7 @@
         <div class="navbar-wrapper">
             <div class="m-header">
                 <a href="{{ route('dashboard') }}" class="b-brand text-primary">
-                    <img src="{{ asset('berry/assets/images/logo-dark.svg') }}" alt="Minimarket" class="logo logo-lg">
+                    <img src="{{ asset('images/foto.jpeg') }}" alt="Foto Minimarket" style="width: 56px; height: 56px; object-fit: cover; border-radius: 50%;">
                 </a>
             </div>
             <div class="navbar-content">

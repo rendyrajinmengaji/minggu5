@@ -11,6 +11,18 @@
         @error('category')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 
+    <div class="col-md-6">
+        <label for="product_code" class="form-label">Kode produk</label>
+        <input id="product_code" name="product_code" type="text" class="form-control @error('product_code') is-invalid @enderror" value="{{ old('product_code', $product->product_code) }}" maxlength="100">
+        @error('product_code')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
+
+    <div class="col-md-6">
+        <label for="barcode" class="form-label">Barcode</label>
+        <input id="barcode" name="barcode" type="text" class="form-control @error('barcode') is-invalid @enderror" value="{{ old('barcode', $product->barcode) }}" maxlength="100">
+        @error('barcode')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
+
     <div class="col-12">
         <label for="description" class="form-label">Deskripsi</label>
         <textarea id="description" name="description" rows="4" class="form-control @error('description') is-invalid @enderror">{{ old('description', $product->description) }}</textarea>

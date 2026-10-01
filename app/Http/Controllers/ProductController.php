@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
@@ -62,6 +63,8 @@ class ProductController extends Controller
     {
         return $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'product_code' => ['nullable', 'string', 'max:100', Rule::unique('products', 'product_code')->ignore($request->route('product'))],
+            'barcode' => ['nullable', 'string', 'max:100', Rule::unique('products', 'barcode')->ignore($request->route('product'))],
             'category' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'price' => ['required', 'numeric', 'min:0'],
